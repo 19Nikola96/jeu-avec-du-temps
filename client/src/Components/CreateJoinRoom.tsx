@@ -28,7 +28,7 @@ const CreateJoinRoom= () => {
     const socketRef: React.MutableRefObject<any> = useRef()
 
     useEffect(() => {
-        socketRef.current = io.connect('/')
+        socketRef.current = io.connect('https://arcane-hamlet-59795.herokuapp.com/')
 
         socketRef.current.on("your id", (id: string | number) => {
             setMyId(id)
