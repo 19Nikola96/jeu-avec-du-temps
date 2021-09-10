@@ -1,0 +1,140 @@
+#draw {
+    border: tomato 2px solid;
+    width: 604px;
+    border-radius: 7px;
+    padding-left: 0;
+    margin-left: 50px;
+}
+
+#sketch {
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 7px;
+    width: 600px;
+    height: 400px;
+}
+
+.color-brush-box {
+    position: relative;
+}
+
+.color-brush{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    background-color: white !important;
+}
+
+.color-brush::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+
+.color-brush::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+.color-brush-box i {
+    color: white;
+    font-size: 20px;
+    bottom: -5px;
+    right: -5px;
+    position: absolute;
+}
+
+.pen-width {
+    padding-left: 0;
+    height: 250px;
+    margin-bottom: 0;
+}  
+
+.pen-width li {
+    margin: 0 auto;
+    transition: all .2s;
+    list-style-type: none;
+    position: relative;
+    border: 2px solid white;
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.pen-width li:nth-child(1) span{
+    width: 2px;
+    height: 2px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pen-width li:nth-child(2) span {
+    width: 6px;
+    height: 6px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pen-width li:nth-child(3) span {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pen-width li:nth-child(4) span {
+    width: 17px;
+    height: 17px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pen-width li:nth-child(5) span {
+    width: 30px;
+    height: 30px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pen-width .picked {
+    background-color: rgba(255, 255, 255, 0.37);
+    width: 50px;
+    height: 50px;
+}
+
+.pen-width .picked span {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.eraser {
+    transition: all .2s;
+    color: white;
+    font-size: 25px;
+    border: 2px solid white;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+div .picked {
+    background-color: rgba(255, 255, 255, 0.37);
+    width: 47px;
+    height: 47px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}

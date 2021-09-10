@@ -1,0 +1,424 @@
+.goodWord {
+    transition: .2s;
+    background: linear-gradient(to top right, #144253, #2b8d22);
+    color: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: none;
+    font-size: 50px;
+}
+
+.passWord {
+    transition: .2s;
+    background: linear-gradient(to top right, #3a0038, #dc0808);
+    color: white;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: none;
+    font-size: 25px;
+}
+
+.goodWord:hover {
+    transform: scale(1.1);
+}
+
+.passWord:hover {
+    transform: scale(1.1);
+}
+
+.goodWord:active {
+    font-size: 80px;
+    transform: translateY(3px) scale(.5);
+}
+
+.passWord:active {
+    font-size: 40px;
+    transform: translateY(3px) scale(.5);
+}
+
+.word {
+    transition: all .4s;
+    width: 185px;
+    height: 185px;
+    margin: 0 auto;
+    background: linear-gradient(200deg,#8008b1,#ff5961);;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #231f1f48;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    animation-name: wordGrow;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: inherit;
+    font-size: 40px;
+    right: calc(50% - (185px / 2));
+    top: 0;
+}
+
+.goodWord-anim {
+    position: absolute;
+    font-size: 0px;
+    animation-name: goodWordAnim;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes goodWordAnim {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(.3);
+    }
+    80% {
+        right: 112px;
+        top: -40%;
+        transform: scale(.2);
+    }
+    90% {
+        right: 112px;
+        top: -40%;
+        transform: scale(.3);
+    }
+    100% {
+        right: 112px;
+        top: -40%;
+        transform: scale(0);
+    }
+}
+
+.goodWord-anim-draw {
+    position: absolute;
+    font-size: 0px;
+    animation-name: goodWordAnimDraw;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes goodWordAnimDraw {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(.3);
+    }
+    80% {
+        top: -54%;
+        right: 66px;
+        transform: scale(.2);
+    }
+    90% {
+        top: -54%;
+        right: 66px;
+        transform: scale(.3);
+    }
+    100% {
+        top: -54%;
+        right: 66px;
+        transform: scale(0);
+    }
+}
+
+.word > div {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-shadow: 0 0 5px #0000008c;
+}
+
+.position-points {
+    position: relative;
+    height: 80vh;
+}
+
+.position-points-draw {
+    position: relative;
+    height: 40vh;
+}
+
+.points {
+    position: absolute;
+    top: 60px;
+    right: 30px;    
+    width: 200px;
+    height: 50px;
+    box-shadow: inset 0px 0px 3px purple, 0px 0px 3px #a7029ec7;
+    background-color: #fdf8dc;
+    border-radius: 25px;
+    font-weight: 800;
+    color: #b50696;
+    font-size: 30px;
+}
+
+.points .empty-circle {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid palevioletred;
+    color: transparent;
+}
+
+.points-bucket {
+    transition: .4s;
+    width: 150px;
+    height: 5px;
+    background-color: ivory;
+    position: relative;
+}
+
+.points-box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 110%;
+    border-radius: 25px;
+    background-color: rgba(170, 40, 209, 0.445);
+}
+
+/* .points-bucket::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -200px;
+    width: 5px;
+    height: 200px;
+    background-color: ivory;
+}
+
+.points-bucket::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -200px;
+    width: 5px;
+    height: 200px;
+    background-color: ivory;
+}
+
+.points .liquid1 {
+    position: absolute;
+    top: -50px;
+    left: 5px;
+    height: 50px;
+    width: 140px;
+    border-radius: 100% 0% 100% 0% / 31% 100% 0% 69%;
+    background-color: purple;
+    animation-name: wave;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.points .liquid2 {
+    position: absolute;
+    top: -60px;
+    left: 5px;
+    height: 60px;
+    width: 140px;
+    border-radius: 56% 44% 100% 0% / 17% 100% 0% 83%;
+    background-color: #ff5961b0;
+    animation-name: wave;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+
+
+@keyframes wave {
+    0% {
+        border-radius: 56% 44% 100% 0% / 17% 100% 0% 83%;
+    }
+    100% {        
+        border-radius: 100% 0% 100% 0% / 31% 100% 0% 69%;
+    }
+} */
+
+@keyframes wordGrow {
+    0% {
+        transform: scale(1) translateY(20px);
+        font-size: 45px;
+        box-shadow: 0 0 10px #231f1f25, inset 0 0 10px rgb(41 2 65 / 38%);
+    }
+    100% {
+        transform: scale(1.05) translateY(0px);
+        box-shadow: 0 0 20px #231f1f48;
+    }
+}
+
+.points-box {
+    position: relative;
+    width: 100%;
+} 
+
+.points-box .part-circle1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(25deg,blueviolet, #e74a70);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle2 {
+    position: absolute;
+    top: -16px;
+    left: 73px;
+    border: 2px solid blueviolet;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle3 {
+    position: absolute;
+    top: 1px;
+    left: 86px;
+    border: 2px solid blueviolet;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle4 {
+    position: absolute;
+    top: -20px;
+    left: 70px;
+    background: linear-gradient(280deg, blueviolet, #e74a70);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle5 {
+    position: absolute;
+    top: 10px;
+    left: 150px;
+    border: 2px solid blueviolet;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle6 {
+    position: absolute;
+    top: -32px;
+    left: 50px;
+    border: 2px solid blueviolet;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle7 {
+    position: absolute;
+    top: -5px;
+    left: 130px;
+    background: linear-gradient(300deg, blueviolet, #df4067);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle8 {
+    position: absolute;
+    top: -2px;
+    left: 75px;
+    background: linear-gradient(300deg, blueviolet, #df4067);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle9 {
+    position: absolute;
+    top: -11px;
+    left: 30px;
+    background: rgba(137, 43, 226, 0.657);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle10 {
+    position: absolute;
+    top: -18px;
+    left: 125px;
+    background: rgba(137, 43, 226, 0.657);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle11 {
+    position: absolute;
+    top: 5px;
+    left: 105px;
+    border: 2px solid blueviolet;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.points-box .part-circle12 {
+    position: absolute;
+    top: -5px;
+    left: 43px;
+    background: linear-gradient(180deg, blueviolet, #e74a70);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+[class*="part-circle"] {
+    transform: scale(0);
+}
+
+.bubble-anim {
+    z-index: 10;
+    transform: scale(0);
+    animation-name: bubble;
+    animation-delay: .8s;
+    animation-duration: 1.5s;
+}
+
+.bubble-animNoDelay {
+    z-index: 10;
+    transform: scale(0);
+    animation-name: bubble;
+    animation-duration: 1.5s;
+}
+
+@keyframes bubble {
+    10% {
+        transform: scale(0) translateY(0px);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1) translateY(-75px);    
+    }
+    90% {
+        transform: scale(1) translateY(-90px);        
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0) translateY(-100px);
+        opacity: 0;
+    }
+}

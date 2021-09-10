@@ -1,0 +1,79 @@
+.position-chrono {
+    position: relative;
+}
+
+#chrono-box {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.chrono {
+    position: absolute;
+    top: 0;
+    margin: 3rem auto;
+    width: 0px;
+    height: 0px;
+    transform: scale(0.7) translateX(-80px);
+}
+  
+.skill {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+}
+
+.outer {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(255, 255, 255, 0.17), -6px -6px 10px -1px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    background: linear-gradient(to top right, #fc4a1a, #f7b733);
+}
+
+.inner {
+    height: 120px;
+    background-color: cornsilk;
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15), inset -6px -6px 10px -1px rgba(255, 255, 255, 0.17); 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-number {
+    font-size: 40px;
+    height: 68px;
+    color: coral;
+    font-weight: 800;
+}
+
+.chrono svg {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    transform: rotate(-90deg);
+}
+
+.chrono circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+}
+
+@keyframes timer {
+    100% {
+        stroke-dashoffset: 32;
+    }
+}
