@@ -2,11 +2,13 @@ const express = require('express')
 const http = require('http')
 const app = express()
 const server = http.createServer(app)
-const socket = require('socket.io') (http, {
+const socket = require('socket.io') (server, {
     cors: {
-        origin: "*"
+      origin: "https://arcane-hamlet-59795.herokuapp.com",
+      methods: ["GET", "POST"],
     }
-})
+  });
+  
 const io = socket(server)
 
 const cors = require('cors')
