@@ -2,12 +2,19 @@ const express = require('express')
 const http = require('http')
 const app = express()
 const server = http.createServer(app)
-const socket = require('socket.io')
+const socket = require('socket.io') (http, {
+    cors: {
+        origin: "*"
+    }
+})
 const io = socket(server)
+
+const cors = require('cors')
 
 let rooms = {}
 
 io.on('connection', (socket) => {    
+
     socket.emit("your id", socket.id)
 
     socket.emit("available rooms", rooms)
