@@ -456,6 +456,6 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(process.env.PORT || 3000, () => {
+server.listen(process.env.REACT_APP_API_URL || 3000, () => {
     console.log('Server is running');
 })
